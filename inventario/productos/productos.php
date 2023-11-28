@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <title>PRODUCTOS</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <link rel="stylesheet" href="../productos/styleproductos.css">
 </head>
 <body>
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+    <div class="div-titulo">
+        <h1>PRODUCTOS MAK TOOLS</h1>
+    </div>
+    
+    <div class="contenedor">
 
-li {
-  display: inline;
-}
-</style>
-</head>
-<body>
+        <div class="div-formulario">
+            <h2>Planilla de Stock</h2>
 
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
+            <form action="#" id="formulario">
+                <input type="text" id="nombre" placeholder="Nombre del Producto">
+                <input type="text" id="puesto" placeholder="Ingresar Cantidad">
+                <button type="submit" id="btnAgregar">Agregar</button>
+            </form>
+        </div>
 
-</body>
-</html>
+        <div class="div-listado">
+            <h2>listado Productos</h2>
+            <div class="div-productos">
+                
+            </div>
+        </div>
 
+    </div>
+
+    <script src="../productos/productos.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 5%;
     height: 100px;
-    background-color: #d4b106;
+    background-color: #f3d437;
 }
 
 nav .logo {
@@ -55,7 +55,7 @@ nav .list a {
 }
 
 nav .list a:hover {
-    background-color: #ad8b00;
+    background-color: #f5c70e;
 }
 
 #toogle {

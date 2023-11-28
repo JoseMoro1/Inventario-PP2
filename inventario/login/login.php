@@ -36,7 +36,8 @@
             <img class="input-icon" src="images/password.svg" alt="">
         </div>
 
-        <input class="btn" type="submit" name="ingresar" value="Enviar">
+        <!-- <input class="btn" type="submit" name="ingresar" value="Enviar"> -->
+        <a href="../navbar/navbar.php"><input class="btn" type="button" value="Enviar"></a>
     </form>
 </body>
 </html>

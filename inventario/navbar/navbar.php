@@ -13,7 +13,7 @@
         <div class="logo">Inventario</div>
         <ul class="list">
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
+            <li><a href="../productos/productos.php">Productos</a></li>
             <li><a href="#">Categorias</a></li>
             <li><a href="#">Inventario</a></li>
             <li><a href="#">Salir</a></li>

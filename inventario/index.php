@@ -13,12 +13,10 @@
 
         <div class="input-wrapper">
             <input id="name" type="text" name="name" placeholder="Nombre">
-            <img class="input-icon" src="images/name.svg" alt="">
         </div>
 
         <div class="input-wrapper">
             <input id="email" type="email" name="email" placeholder="Email">
-            <img class="input-icon" src="images/email.svg" alt="">
         </div>
 
         <!-- <div class="input-wrapper">
@@ -33,7 +31,6 @@
 
         <div class="input-wrapper">
             <input id="password" type="password" name="password" placeholder="Contraseña">
-            <img class="input-icon" src="images/password.svg" alt="">
         </div>
 
         <input class="btn" type="submit" name="register" value="Enviar">
