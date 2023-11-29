@@ -74,6 +74,7 @@ function mostrarProductos() {
 
         const parrafo = document.createElement('p');
         parrafo.textContent = `${id} - ${nombre} - ${puesto} - `;
+        parrafo.classList.add('textoProducto');
         parrafo.dataset.id = id;
 
         const editarBoton = document.createElement('button');
