@@ -1,53 +1,67 @@
-let listadoProductos = [];
-
-const objProducto = {
+var listaProductos = [];
+var objProducto = {
     id: '',
     nombre: '',
     puesto: ''
 }
+var editando = false;
 
-let editando = false;
+const btnAgregarInput = document.querySelector('#btnAgregar');
+const btnCancelarInput = document.querySelector('#btnCancelar');
 
 const formulario = document.querySelector('#formulario');
-const nombreInput = document.querySelector('#nombre');
-const puestoInput = document.querySelector('#puesto');
-const btnAgregarInput = document.querySelector('#btnAgregar');
 
-formulario.addEventListener('submit', validarFormulario);
+btnAgregarInput.addEventListener('click', validarFormulario);
+btnCancelarInput.addEventListener('click', cancelarEdicion);
 
 function validarFormulario(e) {
     e.preventDefault();
 
-    if(productInput.value === '' || puestoInput.value === '') {
+    const nombreInput = document.querySelector('#nombre');
+    const puestoInput = document.querySelector('#puesto');
+
+    if(nombreInput.value === '' || puestoInput.value === '') {
         alert('Todos los campos se deben llenar');
         return;
     }
 
     if(editando) {
-        editarProducto();
-        editando = false;
+        editarProducto(nombreInput.value, puestoInput.value);
     } else {
-        objProducto.id = Date.now();
+        objProducto.id = generateRandomId(5);
         objProducto.nombre = nombreInput.value;
         objProducto.puesto = puestoInput.value;
-        agregarProducto();
+        agregarProducto(objProducto);
     }
 }
 
-function agregarProducto() {
-
-    listaProductos.push({...objProducto});
-
-    mostrarProductos();
-
-    formulario.reset();
-    limpiarObjeto();
+function generateRandomId(length) {
+    const characters = '0123456789';
+    let randomId = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+    randomId += characters.charAt(randomIndex);
+    }
+    return randomId;
 }
 
-function limpiarObjeto() {
-    objProducto.id = '';
-    objProducto.nombre = '';
-    objProducto.puesto = '';
+function agregarProducto(objProducto) {
+
+    listaProductos.push({...objProducto});
+    mostrarProductos();
+    formulario.reset();
+    limpiarProducto();
+}
+function limpiarProducto() {
+    objProducto = {
+        id: '',
+        nombre: '',
+        puesto: ''
+    }
+    const nombreInput = document.querySelector('#nombre');
+    const puestoInput = document.querySelector('#puesto');
+    nombreInput.value = '';
+    puestoInput.value = '';
 }
 
 function mostrarProductos() {
@@ -82,6 +96,8 @@ function mostrarProductos() {
 }
 
 function cargarProducto(producto) {
+    const nombreInput = document.querySelector('#nombre');
+    const puestoInput = document.querySelector('#puesto');
     const {id, nombre, puesto} = producto;
 
     nombreInput.value = nombre;
@@ -89,16 +105,15 @@ function cargarProducto(producto) {
     
     objProducto.id = id;
 
-    formulario.querySelector('button[type="submit"]').textContent = 'Actualizar';
-    
-    editando = true;
+    formulario.querySelector('#btnAgregar').textContent = 'Actualizar';
+    editando = true
 }
 
-function editarProducto() {
+function editarProducto(nombre,puesto) {
 
-    objProducto.nombre = nombreInput.value;
-    objProducto.puesto = puestoInput.value;
-    listadoproductos.map(producto => {
+    objProducto.nombre = nombre;
+    objProducto.puesto = puesto;
+    listaProductos.map(producto => {
 
         if(producto.id === objProducto.id) {
             producto.id = objProducto.id;
@@ -112,14 +127,20 @@ function editarProducto() {
     mostrarProductos();
     formulario.reset();
 
-    formulario.querySelector('button[type="submit"]').textContent = 'Agregar';
+    formulario.querySelector('#btnAgregar').textContent = 'Agregar';
     
     editando = false;
 }
 
+function cancelarEdicion() {
+limpiarProducto();
+editando = false;
+formulario.querySelector('#btnAgregar').textContent = 'Agregar';
+}
+
 function eliminarProducto(id) {
 
-    listadoProductos = listadoProductos.filter(producto => producto.id !== id);
+    listaProductos = listaProductos.filter(producto => producto.id !== id);
 
     limpiarHTML();
     mostrarProductos();

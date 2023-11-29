@@ -20,19 +20,19 @@
             <form action="#" id="formulario">
                 <input type="text" id="nombre" placeholder="Nombre del Producto">
                 <input type="text" id="puesto" placeholder="Ingresar Cantidad">
-                <button type="submit" id="btnAgregar">Agregar</button>
+                <button onclick="e=>validarFormulario(e)" id="btnAgregar">Agregar</button>
+                <button id="btnCancelar" onclick="e=>cancelarEdicion(e)">Cancelar</button>
             </form>
         </div>
 
         <div class="div-listado">
-            <h2>listado Productos</h2>
-            <div class="div-productos">
-                
+            <h2>Listado Productos</h2>
+            <div class="div-productos"> 
             </div>
         </div>
 
     </div>
 
-    <script src="../productos/productos.js"></script>
+    <script src="./productos.js"></script>
 </body>
 </html>
