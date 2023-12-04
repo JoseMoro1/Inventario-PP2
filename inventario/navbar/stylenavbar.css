@@ -80,6 +80,47 @@ nav .icon-bars .line {
     transition: all .3s ease-in-out;
 }
 
+.menu-vertical {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-vertical li a {
+    display: block;
+    padding: 15px 20px;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* .list li:hover {
+    background-color: #f5c70e;
+} */
+
+.menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.list li:hover .menu-vertical {
+    display: block;
+}
+
+/* .menu-vertical li:hover {
+    background-color: black;
+} */
+
+.menu-vertical li a {
+    display: block;
+    color: black;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+
 @media(max-width: 768px) {
     nav .logo {
         float: none;
