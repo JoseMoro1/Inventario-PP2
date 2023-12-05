@@ -1,3 +1,11 @@
+<?php
+
+require './conexionproductos.php';
+$db = new database();
+$con = $db->conectar();
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +21,6 @@
     </div>
     
     <div class="contenedor">
-
         <div class="div-formulario">
             <h2>Planilla de Stock</h2>
 
@@ -30,9 +37,7 @@
             <div class="div-productos"> 
             </div>
         </div>
-
     </div>
-
     <script src="./productos.js"></script>
 </body>
 </html>

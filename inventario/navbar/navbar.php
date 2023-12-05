@@ -12,7 +12,7 @@
         <!-- <label for="tooggle"><img src="../images/logo mak tools.jpg" alt="menu"></label> -->
         <div class="logo">Inventario</div>
         <ul class="list">
-            <li><a href="#">Inicio</a></li>
+            <li><a href="./navbar.php">Inicio</a></li>
             <li><a href="../productos/productos.php">Productos</a></li>
             <li><a href="#">Categorias</a>
             <ul class="menu-vertical">
@@ -26,7 +26,7 @@
                 <li><a href="#">Carritos porta Herramientas</a></li>
             </ul>
             </li>
-            <li><a href="#">Salir</a></li>
+            <li><a href="../login/login.php">Salir</a></li>
         </ul>
 
         <label for="toogle" class="icon-bars">

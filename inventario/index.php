@@ -33,7 +33,7 @@
             <input id="password" type="password" name="password" placeholder="Contraseña">
         </div>
 
-        <input class="btn" type="submit" name="register" value="Enviar">
+        <a href="./login/login.php"><input class="btn" type="button" name="register" value="Enviar"></a>
     </form>
 </body>
 </html>
